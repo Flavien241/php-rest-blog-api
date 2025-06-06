@@ -11,7 +11,7 @@ class UpdateBilletRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateBilletRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:100',
+            'contenu' => 'required|string'
         ];
     }
 }
